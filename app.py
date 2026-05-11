@@ -1,31 +1,20 @@
 import streamlit as st
 
-# إعدادات الصفحة بستايل شبابي وقوي
-st.set_page_config(page_title="FinCompare", page_icon="⚡", layout="centered")
+# إعدادات الصفحة
+st.set_page_config(page_title="FinCompare", page_icon="⚡")
 
-# إضافة ستايل CSS للألوان والخطوط
+# ستايل CSS
 st.markdown("""
     <style>
-    .main {
-        background-color: #0E1117;
-    }
-    h1 {
-        color: #BF94FF; 
-        text-align: center;
-    }
-    .stButton>button {
-        background-color: #BF94FF;
-        color: black;
-        border-radius: 20px;
-        font-weight: bold;
-        width: 100%;
-    }
+    .main { background-color: #0E1117; }
+    h1 { color: #BF94FF; text-align: center; }
+    .stButton>button { background-color: #BF94FF; color: black; border-radius: 20px; width: 100%; }
     </style>
     """, unsafe_allow_html=True)
 
-# اللوجو والعنوان
+# العنوان
 st.markdown("<h1>⚡ FinCompare</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: white;'>الخلاصة.. عشان تقسط صح!</p>", unsafe_allow_info=True)
+st.write("<p style='text-align: center; color: white;'>الخلاصة.. عشان تقسط صح!</p>", unsafe_allow_html=True)
 
 st.divider()
 
@@ -46,7 +35,7 @@ if st.button("وريني الأوفر دلوقتي!"):
         st.markdown(f"""
         <div style="background-color: #262730; padding: 20px; border-radius: 15px; margin-bottom: 10px; border: 1px solid #BF94FF;">
             <h3 style="color: white; margin: 0;">{co['icon']} {co['name']}</h3>
-            <p style="color: #BF94FF; font-size: 20px; margin: 5px 0;">القسط: <b>{total/months:,.2f} جنيه/شهر</b></p>
+            <p style="color: #BF94FF; font-size: 20px; margin: 5px 0;">القسط: {total/months:,.2f} جنيه/شهر</p>
             <small style="color: #888;">إجمالي المبلغ: {total:,.2f} جنيه</small>
         </div>
         """, unsafe_allow_html=True)
